@@ -1,0 +1,368 @@
+/* ==========================================================================
+   RESPONSIVE CARD LAYOUT
+   Syllabus Topics Demonstrated:
+   1. Box Model, Selectors, Specificity & Relative Units
+   2. CSS Flexbox (1D Component Alignment, Spacing & Distribution)
+   3. CSS Grid (2D Container Structure & Track Sizing)
+   4. Responsive Design & Media Queries (Strict Mobile-First Workflow)
+   5. Task: Responsive Card Layout
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BOX MODEL, DESIGN TOKENS & RESET
+   - Demonstrating: box-sizing: border-box, CSS custom properties,
+     relative units (rem, ch, clamp, fr, %), clean specificity cascade.
+   -------------------------------------------------------------------------- */
+
+:root {
+    /* Color Palette */
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+    --color-border-hover: #cbd5e1;
+    --color-text-main: #0f172a;
+    --color-text-muted: #64748b;
+    --color-text-light: #94a3b8;
+    
+    /* Brand Accents */
+    --color-primary: #4f46e5;
+    --color-primary-hover: #4338ca;
+    --color-primary-light: #eef2ff;
+
+    /* Category Badge Colors */
+    --badge-android-bg: #ecfdf5;
+    --badge-android-text: #059669;
+    --badge-web-bg: #eff6ff;
+    --badge-web-text: #2563eb;
+    --badge-comm-bg: #fdf4ff;
+    --badge-comm-text: #c026d3;
+    --badge-health-bg: #fff1f2;
+    --badge-health-text: #e11d48;
+
+    /* Tag Badges */
+    --tag-bg: #f1f5f9;
+    --tag-text: #475569;
+    --tag-border: #e2e8f0;
+
+    /* Layered Box Shadows (Box Model elevation) */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+
+    /* Border Radii */
+    --radius-sm: 0.375rem; /* 6px */
+    --radius-md: 0.625rem; /* 10px */
+    --radius-lg: 1rem;     /* 16px */
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Universal Box Model Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Ensures padding & borders are included in calculated dimensions */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    line-height: 1.6; /* Unitless line-height for proportional inheritance */
+    min-height: 100vh;
+    padding: 2rem 1.25rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   2. PAGE HEADER & TYPOGRAPHY
+   - Relative units: clamp(), rem, ch
+   -------------------------------------------------------------------------- */
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto; /* Logical property for horizontal auto margin */
+}
+
+.page-header {
+    margin-bottom: 2.25rem;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.8125rem; /* 13px */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    font-size: clamp(1.85rem, 4vw, 2.75rem); /* Fluid responsive typography */
+    font-weight: 800;
+    color: var(--color-text-main);
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+}
+
+.intro {
+    font-size: 1.0625rem; /* 17px */
+    color: var(--color-text-muted);
+    max-width: 58ch; /* 58 characters optimal reading width */
+}
+
+/* --------------------------------------------------------------------------
+   3. CSS GRID: RESPONSIVE CONTAINER (MOBILE-FIRST)
+   - Mobile Base (< 600px): 1 single column
+   -------------------------------------------------------------------------- */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile-first: 1 column */
+    gap: 1.5rem; /* Consistent 24px grid gutter */
+}
+
+/* --------------------------------------------------------------------------
+   4. CSS FLEXBOX: CARD INTERNAL LAYOUT
+   - Demonstrating: flex-direction: column, justify-content, align-items,
+     flex-wrap: wrap, and margin-top: auto for vertical alignment.
+   -------------------------------------------------------------------------- */
+
+.project-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    
+    /* 1D Flexbox layout along vertical axis */
+    display: flex;
+    flex-direction: column;
+
+    /* Box shadow & transitions for micro-interactions */
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-smooth),
+                box-shadow var(--transition-smooth),
+                border-color var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Accent highlight bar on card top on hover */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), #818cf8);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.project-card:hover {
+    transform: translateY(-6px); /* Micro-animation: card elevation */
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-border-hover);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* Card Header (Flexbox Row: space-between & center alignment) */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.card-badge {
+    font-size: 0.75rem; /* 12px */
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+}
+
+.badge-android {
+    background-color: var(--badge-android-bg);
+    color: var(--badge-android-text);
+}
+
+.badge-web {
+    background-color: var(--badge-web-bg);
+    color: var(--badge-web-text);
+}
+
+.badge-comm {
+    background-color: var(--badge-comm-bg);
+    color: var(--badge-comm-text);
+}
+
+.badge-health {
+    background-color: var(--badge-health-bg);
+    color: var(--badge-health-text);
+}
+
+.card-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
+}
+
+/* Card Body Content */
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h2 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 700;
+    color: var(--color-text-main);
+    letter-spacing: -0.015em;
+    margin-bottom: 0.625rem;
+}
+
+.card-body p {
+    font-size: 0.9375rem; /* 15px */
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+}
+
+/* Card Tags (Flexbox with Wrap & Gap) */
+.card-tags {
+    display: flex;
+    flex-wrap: wrap; /* Wraps pills neatly when content exceeds card width */
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.tag {
+    font-size: 0.75rem; /* 12px */
+    font-weight: 600;
+    color: var(--tag-text);
+    background-color: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.project-card:hover .tag {
+    background-color: #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   5. CARD FOOTER & ACTIONS (Flexbox + margin-top: auto)
+   - Key flexbox concept: margin-top: auto pushes the footer to the bottom
+     even when project descriptions have differing lengths!
+   -------------------------------------------------------------------------- */
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto; /* Push button to bottom edge of card */
+    padding-top: 1.15rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 600;
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    text-decoration: none;
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast),
+                color var(--transition-fast),
+                transform var(--transition-fast),
+                box-shadow var(--transition-fast);
+}
+
+.arrow-icon {
+    transition: transform var(--transition-smooth);
+}
+
+.card-link:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px -2px rgba(79, 70, 229, 0.35);
+}
+
+.card-link:hover .arrow-icon {
+    transform: translate(2px, -2px); /* Upward-right dynamic movement for external link */
+}
+
+.card-link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   6. RESPONSIVE DESIGN & MOBILE-FIRST MEDIA QUERIES
+   Progression:
+   - Base (< 600px): 1 column (Mobile)
+   - Tablet (>= 600px): 2 columns (Tablets & Phablets)
+   - Desktop (>= 960px): 4 columns (Laptops, Desktops, Widescreens)
+   -------------------------------------------------------------------------- */
+
+/* Tablet Breakpoint (min-width: 600px) */
+@media (min-width: 600px) {
+    body {
+        padding: 3rem 1.5rem;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+        gap: 1.5rem;
+    }
+}
+
+/* Desktop Breakpoint (min-width: 960px) */
+@media (min-width: 960px) {
+    body {
+        padding: 4rem 2rem;
+    }
+
+    .page-header {
+        margin-bottom: 3rem;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 equal columns on desktop */
+        gap: 1.5rem;
+    }
+}
+
+/* Extra Large Screens (min-width: 1280px) */
+@media (min-width: 1280px) {
+    .project-grid {
+        gap: 1.75rem;
+    }
+
+    .project-card {
+        padding: 1.75rem;
+    }
+}

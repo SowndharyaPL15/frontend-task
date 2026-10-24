@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern, fully responsive card layout showcasing web and mobile development projects. Built with CSS Grid, Flexbox, and mobile-first media queries.">
+    <title>Responsive Card Layout | My Projects</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <header class="page-header">
+            <span class="section-tag">Portfolio Showcase</span>
+            <h1>My Projects</h1>
+            <p class="intro">A collection of my development projects built using modern web and mobile technologies.</p>
+        </header>
+
+        <section class="project-grid" aria-label="Projects list">
+
+            <!-- Card 1: SmartExpensePro -->
+            <article class="project-card">
+                <div class="card-header">
+                    <span class="card-badge badge-android">Mobile App</span>
+                    <span class="card-icon" aria-hidden="true">📱</span>
+                </div>
+                <div class="card-body">
+                    <h2>SmartExpensePro</h2>
+                    <p>An intuitive Android application designed for personal budget tracking, categorized spending analytics, and expense forecasting.</p>
+                    <div class="card-tags">
+                        <span class="tag">Android</span>
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">Room DB</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/SowndharyaPL15/SmartExpensePro" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View SmartExpensePro project on GitHub">
+                        <span>View Project</span>
+                        <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 2: CivicPulse -->
+            <article class="project-card">
+                <div class="card-header">
+                    <span class="card-badge badge-web">Web App</span>
+                    <span class="card-icon" aria-hidden="true">🌐</span>
+                </div>
+                <div class="card-body">
+                    <h2>CivicPulse</h2>
+                    <p>An intelligent civic issue management platform where citizens report municipal problems with location data and automatic department routing.</p>
+                    <div class="card-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Bootstrap</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/SowndharyaPL15/civicpulse" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View CivicPulse project on GitHub">
+                        <span>View Project</span>
+                        <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 3: Connectify -->
+            <article class="project-card">
+                <div class="card-header">
+                    <span class="card-badge badge-comm">Real-Time</span>
+                    <span class="card-icon" aria-hidden="true">💬</span>
+                </div>
+                <div class="card-body">
+                    <h2>Connectify</h2>
+                    <p>A production-ready real-time messaging platform inspired by WhatsApp Web, featuring live socket chats, reactions, and Docker containerization.</p>
+                    <div class="card-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">OAuth</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/SowndharyaPL15/connectify" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View Connectify project on GitHub">
+                        <span>View Project</span>
+                        <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 4: CuraNet -->
+            <article class="project-card">
+                <div class="card-header">
+                    <span class="card-badge badge-health">Healthcare</span>
+                    <span class="card-icon" aria-hidden="true">🏥</span>
+                </div>
+                <div class="card-body">
+                    <h2>CuraNet</h2>
+                    <p>A digital healthcare support platform helping patients, caregivers, and doctors manage personalized care plans and medical coordination.</p>
+                    <div class="card-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">EJS</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="https://github.com/SowndharyaPL15/CuraNet" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View CuraNet project on GitHub">
+                        <span>View Project</span>
+                        <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+</body>
+</html>
