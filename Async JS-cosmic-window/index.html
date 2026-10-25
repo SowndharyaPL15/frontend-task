@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Cosmic Window explores the universe through real astronomy pictures and space discoveries using NASA's public APIs."
+    >
+
+    <title>Cosmic Window | Space Discovery Explorer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23131726'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='56' fill='%23d6b8ff'>✦</text></svg>">
+
+    <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container navigation">
+
+            <a href="#" class="brand" aria-label="Cosmic Window home">
+                <span class="brand-icon" aria-hidden="true">✦</span>
+                <span>Cosmic Window</span>
+            </a>
+
+            <span class="nav-label">YOUR DAILY VIEW OF THE UNIVERSE</span>
+
+            <a href="#discover" class="nav-link">Explore Space ↗</a>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero-content">
+
+                <p class="eyebrow">BEYOND OUR WORLD</p>
+
+                <h1>
+                    Somewhere,
+                    <span>the universe is waiting.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Every day brings a new perspective. Explore distant
+                    galaxies, extraordinary nebulae, and the mysteries
+                    that make our universe remarkable.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#discover" class="primary-button">
+                        Begin Exploring <span aria-hidden="true">↓</span>
+                    </a>
+                </div>
+
+                <div class="hero-meta">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>Live discoveries powered by NASA Astronomy APIs</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Main Discovery -->
+        <section class="discovery-section" id="discover">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">THE DAILY DISCOVERY</p>
+                        <h2>Today's Universe</h2>
+                        <p>Browse astronomy pictures and research discoveries across the cosmos.</p>
+                    </div>
+
+                    <span class="section-tag">NASA APOD</span>
+                </div>
+
+                <!-- Date Search Controls -->
+                <div class="search-controls date-toolbar">
+
+                    <div class="date-control date-field">
+                        <label for="date-input">Travel to a date (from June 16, 1995)</label>
+                        <input type="date" id="date-input" aria-label="Choose discovery date">
+                    </div>
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="search-button"
+                    >
+                        Explore Date
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="today-button"
+                    >
+                        Today
+                    </button>
+
+                </div>
+
+                <!-- Preset Quick Exploration -->
+                <div class="preset-chips" aria-label="Quick cosmic discoveries">
+                    <span class="preset-label">Iconic Discoveries:</span>
+                    <button type="button" class="preset-chip" data-date="2022-07-12">✦ Webb's Deep Field</button>
+                    <button type="button" class="preset-chip" data-date="2022-10-19">✦ Pillars of Creation</button>
+                    <button type="button" class="preset-chip" data-date="2022-07-13">✦ Carina Nebula</button>
+                    <button type="button" class="preset-chip" data-date="2021-11-24">✦ Andromeda Galaxy</button>
+                    <button type="button" class="preset-chip" id="random-button">🎲 Random Date</button>
+                </div>
+
+                <!-- API Key Configuration (Optional) -->
+                <div class="api-key-bar">
+                    <button type="button" class="api-key-toggle" id="api-key-toggle" aria-expanded="false">
+                        <span class="toggle-icon">⚙</span>
+                        <span>NASA API Key Configuration (Optional)</span>
+                    </button>
+                    <div class="api-key-form" id="api-key-form" hidden>
+                        <p class="api-key-help">
+                            Active registered NASA API Key: <code>7J6rggTp...GDRp</code> (1,000 requests/hour personal quota). You can also update or supply another key from <a href="https://api.nasa.gov/" target="_blank" rel="noopener noreferrer">api.nasa.gov</a>:
+                        </p>
+                        <div class="api-key-input-row">
+                            <input type="text" id="api-key-input" placeholder="Paste your NASA API key here..." autocomplete="off">
+                            <button type="button" class="secondary-button" id="save-key-button">Save Key</button>
+                            <button type="button" class="secondary-button" id="reset-key-button">Reset</button>
+                        </div>
+                        <p class="api-key-status" id="api-key-status"></p>
+                    </div>
+                </div>
+
+                <!-- Loading State Message -->
+                <div class="message-box" id="loading-message" role="status" aria-live="polite" hidden>
+                    <div class="loader" aria-hidden="true"></div>
+                    <p class="loading-title">Connecting with the cosmos...</p>
+                    <span class="loading-subtext">Fetching signals from NASA Astronomy Picture of the Day</span>
+                </div>
+
+                <!-- Error State Message -->
+                <div class="message-box error-message" id="error-message" role="alert" aria-live="assertive" hidden>
+                    <div class="error-icon" aria-hidden="true">✦</div>
+                    <h3 id="error-heading">We lost contact with space.</h3>
+                    <p id="error-text">
+                        Something went wrong while loading the discovery.
+                    </p>
+
+                    <div class="error-actions">
+                        <button
+                            type="button"
+                            class="primary-button"
+                            id="retry-button"
+                        >
+                            Try Again
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="archive-fallback-button"
+                        >
+                            View Archived Discovery
+                        </button>
+                    </div>
+                </div>
+
+                <!-- API Discovery Results -->
+                <article class="discovery-card" id="discovery-card" hidden>
+
+                    <!-- Notice when displaying curated fallback -->
+                    <div class="archive-notice" id="archive-notice" hidden>
+                        <span>✦ Displaying verified cosmic archive while live NASA API recovers</span>
+                    </div>
+
+                    <div class="discovery-image-wrapper">
+                        <img
+                            src=""
+                            alt=""
+                            id="space-image"
+                            class="space-image"
+                            loading="lazy"
+                        >
+
+                        <iframe
+                            id="space-video"
+                            class="space-video"
+                            title="NASA Astronomy Video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            hidden
+                        ></iframe>
+
+                        <span class="image-label" id="image-label">COSMIC ARCHIVE</span>
+                    </div>
+
+                    <div class="discovery-content">
+
+                        <div class="discovery-meta">
+                            <span id="image-date"></span>
+                            <span class="meta-divider">/</span>
+                            <span>ASTRONOMY PICTURE OF THE DAY</span>
+                        </div>
+
+                        <h3 id="image-title"></h3>
+
+                        <p class="image-explanation" id="image-explanation"></p>
+
+                        <p class="image-credit" id="image-credit"></p>
+
+                        <div class="discovery-footer-links">
+                            <a
+                                href="#"
+                                id="original-link"
+                                class="original-link"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                View Original High-Resolution ↗
+                            </a>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- Footer Note -->
+                <div class="discovery-note">
+                    <span aria-hidden="true">✧</span>
+                    <p>
+                        The universe is vast. Let curiosity be your guide.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+
+            <a href="#" class="brand footer-brand" aria-label="Cosmic Window home">
+                <span class="brand-icon" aria-hidden="true">✦</span>
+                <span>Cosmic Window</span>
+            </a>
+
+            <p>
+                Images and astronomy information provided by NASA APOD.
+            </p>
+
+            <span class="footer-label">MADE FOR THE CURIOUS</span>
+
+        </div>
+    </footer>
+
+</body>
+</html>
