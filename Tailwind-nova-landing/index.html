@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NOVA is an independent creative digital studio crafting thoughtful websites, memorable brands, and digital products.">
+    <title>NOVA | Creative Digital Studio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2320211f'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='60' font-weight='900' fill='%237c5c43'>N</text></svg>">
+
+    <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (Play CDN with Config) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        studio: '#f8f7f4',
+                        charcoal: '#20211f',
+                        darkpanel: '#292b27',
+                        sand: '#e8e2d9',
+                        accent: {
+                            DEFAULT: '#7c5c43',
+                            hover: '#644733',
+                            light: '#f2eae1'
+                        },
+                        bordercolor: '#e4e1da',
+                        muted: '#686963'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+
+<body class="bg-studio text-charcoal font-sans antialiased selection:bg-accent selection:text-white min-h-screen flex flex-col">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 z-50 border-b border-bordercolor bg-white/90 backdrop-blur-md transition-all duration-200">
+        <div class="mx-auto flex w-[90%] max-w-[1140px] items-center justify-between py-4 sm:py-5">
+            <a href="#" class="font-display text-2xl font-extrabold tracking-[2px] transition hover:opacity-80">
+                NOVA<span class="text-accent">.</span>
+            </a>
+
+            <div class="flex items-center gap-6">
+                <div class="hidden sm:flex items-center gap-6 text-sm font-semibold text-muted">
+                    <a href="#work" class="transition hover:text-charcoal">Work</a>
+                    <a href="#services" class="transition hover:text-charcoal">Services</a>
+                    <a href="#contact" class="transition hover:text-charcoal">About</a>
+                </div>
+
+                <a href="#contact"
+                   class="inline-flex items-center gap-1.5 rounded-lg border border-charcoal px-4 py-2 text-sm font-semibold transition hover:bg-charcoal hover:text-white">
+                    <span>Let's Talk</span>
+                    <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+
+        <!-- Hero Section -->
+        <header class="py-20 sm:py-28 border-b border-bordercolor/60">
+            <div class="mx-auto w-[90%] max-w-[1140px]">
+                <div class="inline-flex items-center gap-2 mb-6">
+                    <span class="h-2 w-2 rounded-full bg-accent animate-pulse" aria-hidden="true"></span>
+                    <p class="text-xs font-bold uppercase tracking-[2.5px] text-accent">Independent Digital Studio</p>
+                </div>
+
+                <h1 class="font-display max-w-[900px] text-5xl font-extrabold leading-[1.08] tracking-[-2px] sm:text-6xl md:text-7xl lg:text-8xl">
+                    We turn bold ideas into
+                    <span class="text-accent block sm:inline">digital experiences.</span>
+                </h1>
+
+                <p class="mt-7 max-w-[580px] text-lg sm:text-xl leading-relaxed text-muted font-normal">
+                    We create thoughtful websites, memorable brands, and digital
+                    products that help ambitious companies move forward with clarity.
+                </p>
+
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                    <a href="#work"
+                       class="inline-flex items-center gap-2 rounded-lg bg-[#252621] px-6 py-3.5 font-semibold text-white shadow-sm transition hover:bg-accent hover:shadow-md hover:-translate-y-0.5 active:translate-y-0">
+                        <span>Explore Our Work</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="#services"
+                       class="inline-flex items-center gap-2 rounded-lg border border-bordercolor bg-white px-6 py-3.5 font-semibold text-charcoal transition hover:border-accent hover:bg-accent-light/50">
+                        <span>What We Do</span>
+                        <span aria-hidden="true">↓</span>
+                    </a>
+                </div>
+
+                <div class="mt-10 flex items-center gap-3 text-xs sm:text-sm font-medium text-muted">
+                    <span>Strategy</span>
+                    <span class="text-accent" aria-hidden="true">✦</span>
+                    <span>Design</span>
+                    <span class="text-accent" aria-hidden="true">✦</span>
+                    <span>Development</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Selected Work Section -->
+        <section id="work" class="py-16 sm:py-20">
+            <div class="mx-auto w-[90%] max-w-[1140px]">
+                <div class="mb-8 sm:mb-10 flex flex-wrap items-end justify-between gap-4">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[2px] text-accent mb-2">Selected Work</p>
+                        <h2 class="font-display text-3xl font-extrabold sm:text-4xl text-charcoal tracking-tight">
+                            Ideas made tangible.
+                        </h2>
+                    </div>
+                    <span class="text-xs sm:text-sm font-medium text-muted">2025 — 2026 Archive</span>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-12">
+                    <!-- Project 01: Northstar -->
+                    <article class="group rounded-2xl bg-darkpanel p-7 sm:p-9 text-white md:col-span-7 flex flex-col justify-between min-h-[280px] sm:min-h-[320px] transition duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold tracking-[2px] text-white/70 uppercase">PROJECT 01 / DIGITAL</span>
+                            <span class="text-white/40 transition group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true">↗</span>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">Northstar</h3>
+                            <p class="mt-2.5 text-base sm:text-lg text-white/70 leading-relaxed max-w-[460px]">
+                                A comprehensive, human-centric design system and web platform for modern distributed teams.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="rounded-md bg-white/10 px-2.5 py-1 text-xs font-medium text-white/80">UI/UX Design</span>
+                                <span class="rounded-md bg-white/10 px-2.5 py-1 text-xs font-medium text-white/80">Web Development</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 02: Form & Field -->
+                    <article class="group rounded-2xl bg-sand p-7 sm:p-9 text-charcoal md:col-span-5 flex flex-col justify-between min-h-[280px] sm:min-h-[320px] transition duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold tracking-[2px] text-accent uppercase">PROJECT 02 / BRANDING</span>
+                            <span class="text-muted transition group-hover:text-charcoal group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true">↗</span>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">Form &amp; Field</h3>
+                            <p class="mt-2.5 text-base sm:text-lg text-muted leading-relaxed">
+                                A distinctive visual identity inspired by functional minimalism and organic geometry.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="rounded-md bg-charcoal/10 px-2.5 py-1 text-xs font-medium text-charcoal/80">Brand Identity</span>
+                                <span class="rounded-md bg-charcoal/10 px-2.5 py-1 text-xs font-medium text-charcoal/80">Art Direction</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 sm:py-20 bg-white border-y border-bordercolor">
+            <div class="mx-auto w-[90%] max-w-[1140px]">
+                <div class="max-w-[620px] mb-12">
+                    <p class="text-xs font-bold uppercase tracking-[2px] text-accent mb-2">What We Do</p>
+                    <h2 class="font-display text-3xl font-extrabold sm:text-4xl tracking-tight text-charcoal">
+                        Small details. Lasting impact.
+                    </h2>
+                    <p class="mt-3 text-base sm:text-lg text-muted leading-relaxed">
+                        We partner closely with clients from strategic discovery through to production launch and beyond.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+                    <!-- Service 1 -->
+                    <article class="group rounded-2xl border border-bordercolor bg-studio p-8 transition duration-300 hover:border-accent hover:bg-white hover:shadow-lg hover:-translate-y-1 flex flex-col justify-between">
+                        <div>
+                            <span class="font-display text-2xl font-bold text-accent">01</span>
+                            <h3 class="mt-4 font-display text-xl font-bold text-charcoal">Digital Design</h3>
+                            <p class="mt-3 text-sm sm:text-base leading-relaxed text-muted">
+                                Clean, intuitive interfaces designed around real people, user research, and meaningful business goals.
+                            </p>
+                        </div>
+                        <ul class="mt-6 pt-6 border-t border-bordercolor/80 space-y-2 text-xs font-semibold text-charcoal/80">
+                            <li>✦ UX Research &amp; Wireframing</li>
+                            <li>✦ High-Fidelity UI Systems</li>
+                            <li>✦ Interactive Prototyping</li>
+                        </ul>
+                    </article>
+
+                    <!-- Service 2 -->
+                    <article class="group rounded-2xl border border-bordercolor bg-studio p-8 transition duration-300 hover:border-accent hover:bg-white hover:shadow-lg hover:-translate-y-1 flex flex-col justify-between">
+                        <div>
+                            <span class="font-display text-2xl font-bold text-accent">02</span>
+                            <h3 class="mt-4 font-display text-xl font-bold text-charcoal">Web Development</h3>
+                            <p class="mt-3 text-sm sm:text-base leading-relaxed text-muted">
+                                Responsive, accessible websites built for speed, smooth micro-interactions, and a flawless experience on every device.
+                            </p>
+                        </div>
+                        <ul class="mt-6 pt-6 border-t border-bordercolor/80 space-y-2 text-xs font-semibold text-charcoal/80">
+                            <li>✦ Clean Semantic HTML5 &amp; CSS3</li>
+                            <li>✦ Modern Tailwind CSS Architecture</li>
+                            <li>✦ Performance &amp; Accessibility (WCAG)</li>
+                        </ul>
+                    </article>
+
+                    <!-- Service 3 -->
+                    <article class="group rounded-2xl border border-bordercolor bg-studio p-8 transition duration-300 hover:border-accent hover:bg-white hover:shadow-lg hover:-translate-y-1 flex flex-col justify-between">
+                        <div>
+                            <span class="font-display text-2xl font-bold text-accent">03</span>
+                            <h3 class="mt-4 font-display text-xl font-bold text-charcoal">Brand Strategy</h3>
+                            <p class="mt-3 text-sm sm:text-base leading-relaxed text-muted">
+                                Clear brand direction, visual guidelines, and positioning that give good ideas a distinctive, memorable voice.
+                            </p>
+                        </div>
+                        <ul class="mt-6 pt-6 border-t border-bordercolor/80 space-y-2 text-xs font-semibold text-charcoal/80">
+                            <li>✦ Visual Identity &amp; Logo Systems</li>
+                            <li>✦ Typography &amp; Color Palettes</li>
+                            <li>✦ Brand Guidelines &amp; Collateral</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 sm:py-24">
+            <div class="mx-auto w-[90%] max-w-[1140px]">
+                <div class="rounded-3xl bg-darkpanel px-6 py-16 sm:px-14 sm:py-20 text-center text-white shadow-2xl relative overflow-hidden">
+                    <!-- Subtle Glow Effect -->
+                    <div class="absolute -top-24 -left-24 h-64 w-64 rounded-full bg-accent/20 blur-3xl pointer-events-none"></div>
+                    <div class="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-accent/20 blur-3xl pointer-events-none"></div>
+
+                    <p class="text-xs font-bold uppercase tracking-[2.5px] text-accent mb-4">Have a project in mind?</p>
+
+                    <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight max-w-[720px] mx-auto">
+                        Let's make something meaningful together.
+                    </h2>
+
+                    <p class="mt-5 text-base sm:text-lg text-white/70 max-w-[500px] mx-auto leading-relaxed">
+                        Good work starts with a good conversation. Tell us about your goals, timeline, and vision.
+                    </p>
+
+                    <div class="mt-8 flex flex-wrap justify-center items-center gap-4">
+                        <a href="mailto:hello@nova-studio.example?subject=Project%20Inquiry%20from%20NOVA%20Website"
+                           class="inline-flex items-center gap-2 rounded-lg bg-white px-7 py-3.5 font-bold text-charcoal shadow-md transition hover:bg-sand hover:scale-105 active:scale-100">
+                            <span>Start a Conversation</span>
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                        <button type="button"
+                                onclick="navigator.clipboard.writeText('hello@nova-studio.example'); alert('Email address copied to clipboard!');"
+                                class="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">
+                            <span>Copy Email</span>
+                            <span aria-hidden="true">📋</span>
+                        </button>
+                    </div>
+
+                    <p class="mt-8 text-xs text-white/40">
+                        Typically replying within 24 business hours · hello@nova-studio.example
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-bordercolor bg-white py-8">
+        <div class="mx-auto flex w-[90%] max-w-[1140px] flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <a href="#" class="font-display text-lg font-extrabold tracking-[1px] text-charcoal">
+                NOVA<span class="text-accent">.</span>
+            </a>
+
+            <p class="text-xs sm:text-sm text-muted">
+                Crafted with pure Tailwind CSS · Creative Studio Concept © 2026
+            </p>
+
+            <a href="#" class="text-xs font-semibold text-accent hover:underline">
+                Back to Top ↑
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
