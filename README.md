@@ -24,24 +24,36 @@ frontend-task/
 ├── Async JS-cosmic-window/
 │   ├── index.html          # Space explorer UI, date travel bar & NASA card
 │   ├── style.css           # Cosmic dark mode, glassmorphism & typography
-│   └── script.js           # Async API fetching, error handling & states
+│   ├── script.js           # Async API fetching, error handling & states
+│   ├── Screenshot.png      # Application UI preview screenshot
+│   └── README.md           # Project documentation & features
 ├── Bootstrap-nova-landing/
-│   └── index.html          # Native Bootstrap 5 studio landing page & modal
+│   ├── index.html          # Native Bootstrap 5 studio landing page & modal
+│   ├── Screenshot.png      # Application UI preview screenshot
+│   └── README.md           # Project documentation & features
 ├── Tailwind-nova-landing/
-│   └── index.html          # Pure Tailwind CSS studio landing page & theme config
+│   ├── index.html          # Pure Tailwind CSS studio landing page & theme config
+│   ├── Screenshot.png      # Application UI preview screenshot
+│   └── README.md           # Project documentation & features
 ├── dom-campus-lost-found/
 │   ├── index.html          # Semantic HTML markup for lost & found portal
 │   ├── style.css           # Modern styling, typography & responsive layout
-│   └── script.js           # Dynamic DOM manipulation, filtering & storage
+│   ├── script.js           # Dynamic DOM manipulation, filtering & storage
+│   ├── Screenshot.png      # Application UI preview screenshot
+│   └── README.md           # Project documentation & features
 ├── responsive-card-layout/
 │   ├── index.html          # Semantic HTML markup for project cards
-│   └── style.css           # CSS Grid, Flexbox & responsive styling
+│   ├── style.css           # CSS Grid, Flexbox & responsive styling
+│   ├── Screenshot.png      # Application UI preview screenshot
+│   └── README.md           # Project documentation & features
 ├── static-profile-page/
 │   ├── index.html          # Developer profile structure and content
 │   ├── style.css           # Premium styling, typography & layout
 │   ├── script.js           # Scroll animations & nav tracking
-│   └── photo.png           # Profile image asset
-└── README.md               # Project documentation & live links
+│   ├── photo.png           # Profile image asset
+│   ├── Screenshot.png      # Application UI preview screenshot
+│   └── README.md           # Project documentation & features
+└── README.md               # Root repository documentation & live showcase
 ```
 
 ---
@@ -51,6 +63,9 @@ frontend-task/
 ### 1. [Responsive Card Layout](./responsive-card-layout/)
 - **Live URL**: [https://sowndharyapl15.github.io/frontend-task/responsive-card-layout/](https://sowndharyapl15.github.io/frontend-task/responsive-card-layout/)
 - **Tech Stack**: HTML5, CSS3 (CSS Grid, Flexbox, Custom Properties)
+- **UI Preview**:
+  ![Responsive Card Layout Preview](./responsive-card-layout/Screenshot.png)
+  *Figure 1: Responsive card showcase grid displaying CSS Grid multi-column tracks, category badges, and flexbox-aligned project links.*
 - **Key Features**:
   - Fully responsive layout adapting across mobile, tablet, and desktop screens
   - CSS Grid with `auto-fit` and `minmax()` for fluid responsiveness
@@ -60,6 +75,9 @@ frontend-task/
 ### 2. [Static Profile Page](./static-profile-page/)
 - **Live URL**: [https://sowndharyapl15.github.io/frontend-task/static-profile-page/](https://sowndharyapl15.github.io/frontend-task/static-profile-page/)
 - **Tech Stack**: Semantic HTML5, Vanilla CSS3, JavaScript (ES6+)
+- **UI Preview**:
+  ![Static Profile Page Preview](./static-profile-page/Screenshot.png)
+  *Figure 2: Personal developer portfolio showcasing hero section, status indicator, skills matrix, and active navigation tracking.*
 - **Key Features**:
   - **Hero Section**: Personal introduction with headline, status indicator, and profile image
   - **About & Education**: Academic background in Computer Science & Engineering
@@ -72,6 +90,9 @@ frontend-task/
 ### 3. [DOM Campus Lost & Found](./dom-campus-lost-found/)
 - **Live URL**: [https://sowndharyapl15.github.io/frontend-task/dom-campus-lost-found/](https://sowndharyapl15.github.io/frontend-task/dom-campus-lost-found/)
 - **Tech Stack**: Semantic HTML5, Vanilla CSS3, Vanilla JavaScript (DOM Manipulation & Storage APIs)
+- **UI Preview**:
+  ![Campus Lost & Found Preview](./dom-campus-lost-found/Screenshot.png)
+  *Figure 3: Campus lost & found portal displaying live counters, instant search, status filter pills, dynamic cards, and report submission panel.*
 - **Key Features**:
   - **Dynamic Feed**: Real-time rendering of lost and found report cards with status badges
   - **Instant Search & Filter**: Real-time text searching across titles, locations, and descriptions, paired with category/status filters (All, Lost, Found, Returned)
@@ -83,6 +104,9 @@ frontend-task/
 ### 4. [Cosmic Window — Space Discovery Explorer](./Async%20JS-cosmic-window/)
 - **Live URL**: [https://sowndharyapl15.github.io/frontend-task/Async%20JS-cosmic-window/](https://sowndharyapl15.github.io/frontend-task/Async%20JS-cosmic-window/)
 - **Tech Stack**: Semantic HTML5, Vanilla CSS3 (Cosmic Dark Theme), Asynchronous JavaScript (Fetch API, Promises, Async/Await)
+- **UI Preview**:
+  ![Cosmic Window Space Discovery Explorer Preview](./Async%20JS-cosmic-window/Screenshot.png)
+  *Figure 4: Real-time NASA APOD space discovery explorer featuring historical date traveling, curated presets, orbiting loading states, and HD media rendering.*
 - **Key Features**:
   - **NASA APOD Integration**: Live asynchronous fetching from NASA's Astronomy Picture of the Day public API
   - **Date Travel Search**: Historical space exploration dating back to the first APOD (June 16, 1995) through today with strict boundary validation
@@ -97,6 +121,9 @@ frontend-task/
 ### 5. [Tailwind Nova Studio Landing](./Tailwind-nova-landing/)
 - **Live URL**: [https://sowndharyapl15.github.io/frontend-task/Tailwind-nova-landing/](https://sowndharyapl15.github.io/frontend-task/Tailwind-nova-landing/)
 - **Tech Stack**: Semantic HTML5, Tailwind CSS (Play CDN & Config), Modern Typography (*Plus Jakarta Sans* & *Space Grotesk*)
+- **UI Preview**:
+  ![Tailwind Nova Studio Landing Preview](./Tailwind-nova-landing/Screenshot.png)
+  *Figure 5: High-conversion creative studio landing page built with pure Tailwind utility classes, custom theme tokens, and asymmetric 12-column project showcase grid.*
 - **Key Features**:
   - **100% Pure Tailwind Architecture**: Built without monolithic custom CSS sheets, utilizing idiomatic Tailwind utility classes throughout
   - **Custom Theme Configuration**: Extended studio color palette (`#f8f7f4` studio background, `#20211f` charcoal, `#7c5c43` warm accent, `#e8e2d9` sand) and typography stacks
@@ -108,6 +135,9 @@ frontend-task/
 ### 6. [Bootstrap Nova Studio Landing](./Bootstrap-nova-landing/)
 - **Live URL**: [https://sowndharyapl15.github.io/frontend-task/Bootstrap-nova-landing/](https://sowndharyapl15.github.io/frontend-task/Bootstrap-nova-landing/)
 - **Tech Stack**: Semantic HTML5, Bootstrap 5.3.3 CSS & Bundle JS, Custom CSS Variables
+- **UI Preview**:
+  ![Bootstrap Nova Studio Landing Preview](./Bootstrap-nova-landing/Screenshot.png)
+  *Figure 6: Modern agency landing page leveraging native Bootstrap 5.3 components, responsive 12-column flexbox grid, and interactive JavaScript inquiry modal dialog.*
 - **Key Features**:
   - **Native Bootstrap 5 Components**: Responsive `navbar-expand-lg`, grid system (`row g-4`, `col-12 col-md-7`), cards (`card rounded-4`), and badges
   - **Interactive Inquiry Modal**: Bootstrap 5 JavaScript modal dialog (`#inquiryModal`) with form validation for project inquiries
